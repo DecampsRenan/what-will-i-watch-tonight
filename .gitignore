@@ -1,0 +1,7 @@
+# Project related files
+gulpfile.js
+.babelrc
+
+app/
+
+node_modules/
