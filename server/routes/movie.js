@@ -13,7 +13,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var movie = _express2.default.Router();
 
 movie.get('/', function (req, res) {
-	res.send('Coucou de movie');
+	res.render('movies');
 });
 
+// Export the default route
 exports.default = movie;

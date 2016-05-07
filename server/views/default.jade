@@ -1,5 +1,15 @@
 html
   head
-    title!= title
+    title What will I whatch tonight ?
+    include ./statics/styles.jade
   body
-    h2!= message
+    .container-fluid
+        header.row.header
+            .title
+                h1.text-center What will I whatch tonight ?
+
+        section.row.content
+            block content
+
+        footer.row.footer
+            include ./statics/footer.jade

@@ -22,10 +22,10 @@ var _movie2 = _interopRequireDefault(_movie);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// Affichage des infos par defaut:
-console.log('Server root path: ' + __dirname);
+// Routes
 
-// Liste des imports
+
+var PORT = process.env.npm_package_config_port; // Liste des imports
 
 
 var app = (0, _express2.default)();
@@ -37,7 +37,7 @@ app.set('view engine', 'jade');
 // Définition des middleware globaux
 app.use((0, _helmet2.default)());
 app.use((0, _compression2.default)());
-app.use('/static', _express2.default.static(__dirname + 'public'));
+app.use('/assets', _express2.default.static(__dirname + '/public'));
 
 // Définition des routes
 app.use('/', _root2.default);
@@ -50,6 +50,7 @@ app.use(function (err, req, res, next) {
 	res.render('error', { error: err });
 });
 
-app.listen(3000, function () {
-	console.log('App listening on 127.0.0.1:' + 3000);
+app.listen(PORT, function () {
+	console.log('App listening on 127.0.0.1:' + PORT);
+	console.log('Press ctrl-c to stop.');
 });

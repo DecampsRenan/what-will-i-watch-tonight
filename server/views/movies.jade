@@ -1,0 +1,11 @@
+extends ./default.jade
+
+// Affichage de la liste des films
+block content
+  
+  .row.movie-list
+    each val in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      .col-md-2.movie-list__item
+        a.movie-list__item__link(href="#")
+          img.movie-list__item__link__pic(src="https://placehold.it/100x140", alt="movie_title")
+          p.movie-list__item__link__title film-#{val}
